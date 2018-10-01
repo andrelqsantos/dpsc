@@ -2,13 +2,10 @@ module.exports = app => {
 
   const IndexRepository = app.domain.repositories.index
 
-  class Index {   
+  class IndexController {   
 
-    static async list(req, res){
-      IndexRepository.list()
-        .then( (index) => {
-          res.status(200).json(index)
-        })
+    static async show(req, res){
+      res.render('home/index')
     }
 
     static async create(req, res){
@@ -19,5 +16,5 @@ module.exports = app => {
         })
     }
   }
-  return Index
+  return IndexController
 }
