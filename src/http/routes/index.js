@@ -1,7 +1,7 @@
 module.exports = function(app){
-  var Index = app.controllers.index
+  var IndexController = app.http.controllers.index
 
   app.route('/')
-    .get(Index.show)
-    .post(Index.create)
+    .get(IndexController.list)
+    .post(IndexController.create)
 }
